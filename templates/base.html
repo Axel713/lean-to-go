@@ -15,6 +15,36 @@
 </head>
 <body>
 
+    <header>
+        <!-- dropdown Structure -->
+        <ul id="dropdown2" class="dropdown-content">
+            <li><a href="#">PDCA</a></li>
+        </ul>
+
+        <!-- main navbar -->
+        <nav class="nav-extended text-shadow">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Lean to Go</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="dropdown-trigger" data-target="dropdown2">Continuous Improvements<i class="fas fa-sort-down right"></i></a></li>
+                    <li><a href="#">Login / Create Account</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- mobile sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><h4 class="center-align">Lean to Go</h4></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#" class="dropdown-trigger" data-target="dropdown2">Continuous Improvements<i class="fas fa-sort-down right"></i></a></li>
+            <li><a href="#">Login / Create Account</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </header>
+
     {% block content %}
     {% endblock %}
 
