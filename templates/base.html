@@ -27,10 +27,10 @@
         <!-- main navbar -->
         <nav class="nav-extended text-shadow">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo"><i class="fas fa-chalkboard-teacher"></i> Lean to Go</a>
+                <a href="{{ url_for('get_tasks') }}" class="brand-logo"><i class="fas fa-chalkboard-teacher"></i> Lean to Go</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
                     <li><a href="#" class="dropdown-trigger" data-target="dropdown1">Continuous Improvements<i
                             class="fas fa-sort-down right"></i></a></li>
                     <li><a href="#">Login / Create Account</a></li>
@@ -47,7 +47,7 @@
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align">Lean to Go</h4></li>
-            <li><a href="#">Home</a></li>
+            <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
             <li><a href="#" class="dropdown-trigger" data-target="dropdown2">Continuous Improvements<i
                             class="fas fa-sort-down right"></i></a></li>
             <li><a href="#">Login / Create Account</a></li>
