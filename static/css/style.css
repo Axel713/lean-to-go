@@ -19,3 +19,10 @@ body {
 .flashes h4 {
     line-height: 2;
 }
+
+.collapsible-header {
+    background-color: brown;
+}
+.collapsible-body {
+    background-color: blue;
+}
