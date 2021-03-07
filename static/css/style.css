@@ -15,3 +15,7 @@ body {
 .card-panel {
     color: #212121;
 }
+
+.flashes h4 {
+    line-height: 2;
+}
