@@ -33,7 +33,7 @@
                     <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
                     <li><a href="#" class="dropdown-trigger" data-target="dropdown1">Continuous Improvements<i
                             class="fas fa-sort-down right"></i></a></li>
-                    <li><a href="#">Login / Create Account</a></li>
+                    <li><a href="{{ url_for('login') }}">Login / Create Account</a></li>
                     <li><a href="#">Logout</a></li>
                     <li><a href="{{ url_for('register') }}">Register</a></li>
                 </ul>
@@ -51,7 +51,7 @@
             <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
             <li><a href="#" class="dropdown-trigger" data-target="dropdown2">Continuous Improvements<i
                             class="fas fa-sort-down right"></i></a></li>
-            <li><a href="#">Login / Create Account</a></li>
+            <li><a href="{{ url_for('login') }}">Login / Create Account</a></li>
             <li><a href="#">Logout</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
         </ul>
