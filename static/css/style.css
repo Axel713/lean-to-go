@@ -31,6 +31,12 @@ input {
     color: #fafafa;
 }
 
+/*------------------------------------------------------------------------------------ Log in */
+#username,
+#password {
+    color: #212121;
+}
+
 .datepicker-table-wrapper {
     color: #212121;
 }
