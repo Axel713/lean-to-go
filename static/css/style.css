@@ -26,3 +26,15 @@ body {
 .collapsible-body {
     background-color: blue;
 }
+
+input {
+    color: #fafafa;
+}
+
+.datepicker-table-wrapper {
+    color: #212121;
+}
+
+.valid {
+    color: #fafafa;
+}
