@@ -110,13 +110,13 @@ def logout():
 def add_task():
     if request.method == "POST":
         # sets "is_ongoing" variable on if truthy in form element
-        is_ongoing = "on" if request.form.get("is_ongoing") else "off"
+        is_urgent = "on" if request.form.get("is_urgent") else "off"
         # build task dictionary from form
         task = {
             "category_name": request.form.get("category_name"),
             "task_name": request.form.get("task_name"),
             "task_description": request.form.get("task_description"),
-            "is_ongoing": is_ongoing,
+            "is_urgent": is_urgent,
             "due_date": request.form.get("due_date"),
             "created_by": session["user"]
         }
@@ -132,11 +132,12 @@ def add_task():
 # Edit a task
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
-    task = mongo.db.pdca_tasks.find_one({"_id": ObjectId()})
+    task = mongo.db.pdca_tasks.find_one({"_id": ObjectId(task_id)})
 
     # get categories from db
     categories = mongo.db.categories.find()
     return render_template("edit_task.html", task=task, categories=categories)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
