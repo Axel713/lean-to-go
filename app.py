@@ -105,6 +105,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Add a task
 @app.route("/add_task", methods=["GET", "POST"])
 def add_task():
     if request.method == "POST":
@@ -127,6 +128,15 @@ def add_task():
     categories = mongo.db.categories.find()
     return render_template("add_task.html", categories=categories)
 
+
+# Edit a task
+@app.route("/edit_task/<task_id>", methods=["GET", "POST"])
+def edit_task(task_id):
+    task = mongo.db.pdca_tasks.find_one({"_id": ObjectId()})
+
+    # get categories from db
+    categories = mongo.db.categories.find()
+    return render_template("edit_task.html", task=task, categories=categories)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
