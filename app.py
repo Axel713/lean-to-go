@@ -132,6 +132,21 @@ def add_task():
 # Edit a task
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
 def edit_task(task_id):
+    if request.method == "POST":
+        # sets "is_ongoing" variable on if truthy in form element
+        is_urgent = "on" if request.form.get("is_urgent") else "off"
+        # build task dictionary from form
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "task_name": request.form.get("task_name"),
+            "task_description": request.form.get("task_description"),
+            "is_urgent": is_urgent,
+            "due_date": request.form.get("due_date"),
+            "created_by": session["user"]
+        }
+        mongo.db.pdca_tasks.update({"_id": ObjectId(task_id)}, submit)
+        flash("Task Successfully Updated")
+
     task = mongo.db.pdca_tasks.find_one({"_id": ObjectId(task_id)})
 
     # get categories from db
