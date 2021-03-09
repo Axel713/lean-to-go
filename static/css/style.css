@@ -5,7 +5,6 @@ body {
 
 .nav-extended {
     background-color: #00bfa5;
-
 }
 
 .text-shadow {
@@ -25,6 +24,11 @@ body {
 }
 .collapsible-body {
     background-color: blue;
+}
+
+/*------------------------------------------------------------------------------------ Log in */
+#task_description {
+    color: #fafafa;
 }
 
 input {

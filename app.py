@@ -105,8 +105,24 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_task")
+@app.route("/add_task", methods=["GET", "POST"])
 def add_task():
+    if request.method == "POST":
+        # sets "is_ongoing" variable on if truthy in form element
+        is_ongoing = "on" if request.form.get("is_ongoing") else "off"
+        # build task dictionary from form
+        task = {
+            "category_name": request.form.get("category_name"),
+            "task_name": request.form.get("task_name"),
+            "task_description": request.form.get("task_description"),
+            "is_ongoing": is_ongoing,
+            "due_date": request.form.get("due_date"),
+            "created_by": session["user"]
+        }
+        mongo.db.pdca_tasks.insert_one(task)
+        flash("Task Successfully Added")
+        return redirect(url_for("get_tasks"))
+
     # get categories from db
     categories = mongo.db.categories.find()
     return render_template("add_task.html", categories=categories)

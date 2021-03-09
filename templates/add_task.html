@@ -4,7 +4,8 @@
     <h3>Add Task</h3>
 
     <div class="row">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action="{{ url_for('add_task') }}">
+            <!-- category selection -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix"></i>
@@ -17,6 +18,7 @@
                     <label for="category_name">Task Category</label>
                 </div>
             </div>
+            <!-- task name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix"></i>
@@ -25,6 +27,7 @@
                     <label for="task_name">Task Name</label>
                 </div>
             </div>
+            <!-- task description -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix"></i>
@@ -33,6 +36,7 @@
                     <label for="task_description">Task Description</label>
                 </div>
             </div>
+            <!-- due date calendar picker -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix"></i>
@@ -40,6 +44,7 @@
                     <label for="due_date">Due Date</label>
                 </div>
             </div>
+            <!-- is ongoing toggle -->
             <div class="row">
                 <div class="input-field col s12">
                     <div class="switch">
@@ -53,6 +58,14 @@
                     </div>
                 </div>
             </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center align">
+                <button type="submit" class="btn-large">
+                    Add Task <i class="fas fa-plus-square right"></i>
+                </button>
+            </div>
+        </div>
         </form>
     </div>
 
